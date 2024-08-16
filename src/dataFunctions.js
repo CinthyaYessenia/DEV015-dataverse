@@ -1,9 +1,17 @@
-// Estas funciones son ejemplos, aquí puedes desarrollar tus propias funciones.
 
-export const example = () => {
-  return 'example';
+export const filterData = (data, filterBy, value) => {
+  return data.filter(item => item.facts[filterBy] === value);
 };
 
-export const anotherExample = () => {
-  return [];
+export const filterInput = (data, nombreB) => {
+  return data.filter(item => item.name.toLowerCase().includes(nombreB.toLowerCase()));
 };
+
+export function sortData(data, order){
+  return data.sort((a, b) => {
+    if (order === 'Ascendente'){
+      return a.name.localeCompare(b.name);
+    }
+    else return b.name.localeCompare(a.name);
+  })
+} 
